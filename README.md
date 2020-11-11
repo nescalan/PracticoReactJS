@@ -1,2 +1,2 @@
-# proyecto1
-Curso de git
+# Curso Practico de ReactJS
+Curso de React.JS

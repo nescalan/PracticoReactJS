@@ -1,12 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom';
 
-const HelloWorld = () => {
-    return(
-        <div>
-            <h1>HelloWorld</h1>
-        </div>
-    )
-}
+const HelloWorld = () => (
+    <h1>HelloWorld</h1>
+)
 
 export default HelloWorld;

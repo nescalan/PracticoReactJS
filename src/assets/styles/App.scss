@@ -1,4 +1,15 @@
 body {
   margin: 0;
-  background-color: red;
+  font-family: "Muli", sans-serif;
+}
+
+.header {
+  align-items: center;
+  background-color: #21c08b;
+  color: white;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  top: 0px;
+  width: 100%;
 }

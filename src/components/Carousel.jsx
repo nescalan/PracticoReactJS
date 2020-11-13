@@ -1,16 +1,12 @@
-import React, { Children } from 'react';
+import React from 'react';
 import '../assets/styles/components/Carousel.scss';
 
-const Carousel = ({Children}) => (
-
+const Carousel = ({ children }) => (
   <section class="carousel">
-
     <div class="carousel__container">
-        {Children}
+      {children}
     </div>
   </section>
-
-
-)
+);
 
 export default Carousel;

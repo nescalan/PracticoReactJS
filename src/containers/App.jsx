@@ -9,7 +9,12 @@ import Footer from "../components/Footer";
 import "../assets/styles/App.scss";
 
 const App = () => {
-  const [videos, setVideos] = useState([]);
+  //   const [videos, setVideos] = useState([]);
+  const [videos, setVideos] = useState({
+    mylist: [],
+    trends: [],
+    originals: [],
+  });
 
   useEffect(() => {
     fetch("http://localhost:3000/initalState")
@@ -17,39 +22,31 @@ const App = () => {
       .then((data) => setVideos(data));
   }, []);
 
-  console.log(videos);
+  //   console.log(videos);
 
   return (
     <div className="App">
       <Header />
       <Search />
 
-      <Categories title="Mi Lista">
-        <Carousel>
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-        </Carousel>
-      </Categories>
+      {videos.mylist.lenth > 0 && (
+        <Categories title="Mi Lista">
+          <Carousel>
+            <CarouselItem />
+          </Carousel>
+        </Categories>
+      )}
 
       <Categories title="Tendencias">
         <Carousel>
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
+          {videos.trends.map((item) => (
+            <CarouselItem key={item.id} {...item} />
+          ))}
         </Carousel>
       </Categories>
 
       <Categories title="Originales de Platzi Video">
         <Carousel>
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
           <CarouselItem />
         </Carousel>
       </Categories>
